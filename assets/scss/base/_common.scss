@@ -1,0 +1,461 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  1.1 common
+---------------------------------*/
+
+.fix {
+	overflow: hidden;
+}
+
+.clear {
+	clear: both;
+}
+
+.f-left {
+	float: left
+}
+
+.f-right {
+	float: right
+}
+
+.z-index-1 {
+	z-index: 1;
+}
+
+.z-index-11 {
+	z-index: 11;
+}
+
+.opacity-05 {
+	opacity: 0.5;
+}
+
+.overflow-y-visible {
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.p-relative {
+	position: var(--wnr-pos-relative);
+}
+
+.p-absolute {
+	position: var(--wnr-pos-absolute);
+}
+
+.include-bg {
+	@include background();
+}
+
+.x-clip {
+	overflow-x: clip;
+}
+
+.o-xs {
+	@include respond-below($xs) {
+		overflow-x: hidden;
+	}
+}
+
+// Nice Select Custom css
+.nice-select {
+	width: 100%;
+	height: 56px;
+	@include border-radius(var(--wnr-radius-small));
+	@include bg-ui-fill-default;
+	@include color-type-mid2;
+	font-family: var(--wnr-ff-roboto);
+	font-size: var(--wnr-fs-base);
+	font-style: var(--wnr-font-style-normal);
+	font-weight: var(--wnr-font-regular);
+	@include borderDefault;
+	@include lh(56px);
+	padding-inline-start: 45px;
+	margin-block-end: 1.25rem;
+
+
+	&:after {
+		width: 9px;
+		height: 9px;
+		right: 20px;
+		margin-top: -6.5px;
+		@include borderColor(rgba(var(--clr-theme-primary), var(--wnr-opacity-border)));
+	}
+
+	&:focus,
+	&:active {
+		@include borderColor(rgba(var(--clr-theme-primary), var(--wnr-opacity-border)));
+	}
+
+	&:hover {
+		border-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-border)) !important;
+	}
+
+	&.open {
+		@include borderColor(rgba(var(--clr-theme-primary), var(--wnr-opacity-border)));
+
+		&:after {
+			@include transform(rotate(-135deg));
+		}
+	}
+
+	.list {
+		@include bg-ui-fill-default;
+		@include border-radius(5px);
+		box-shadow: 0 0 40px 5px rgb(0 0 0 / 5%);
+		border: none;
+		transform-origin: 50% 0;
+		transform: scale(0.75) translateY(-21px);
+		transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+		width: 100%;
+		padding: .625rem;
+	}
+
+	.option {
+		&.selected {
+			&.focus {
+				background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+				color: rgba(var(--clr-theme-primary), var(--wnr-opacity-txt));
+			}
+		}
+
+		&.focus {
+			@include border-radius(.375rem);
+			background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+			color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+		}
+		&:hover {
+			@include border-radius(.375rem);
+			background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+			color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+		}
+	}
+}
+
+.valign {
+	@include flex(center, center);
+}
+
+.verstack {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	align-self: stretch;
+}
+
+.horistack {
+	@include flexbox();
+	flex-direction: row;
+	align-items: center;
+	align-self: stretch;
+}
+
+// flex shrink
+.flx-shrink-0 {
+	flex-shrink: var(--wnr-shrink-0);
+}
+
+.flx-shrink-1 {
+	flex-shrink: var(--wnr-shrink-1);
+}
+
+.flx-shrink-2 {
+	flex-shrink: var(--wnr-shrink-2);
+}
+
+// line clamp
+.lineClamp1 {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: var(--wnr-overflow-fix);
+}
+
+.lineClamp2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: var(--wnr-overflow-fix);
+}
+
+.lineClamp3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: var(--wnr-overflow-fix);
+}
+
+.lineClamp4 {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: var(--wnr-overflow-fix);
+}
+
+// Text Overflow
+.txt-overflow {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: var(--wnr-overflow-fix);
+}
+
+// Bg Color
+.wnr-bg-primary {
+	background-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-bg));
+}
+
+.wnr-bg-secondary {
+	background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+}
+
+.wnr-bg-tertiary {
+	background-color: rgba(var(--clr-theme-tertiary), var(--wnr-opacity-bg));
+}
+
+.wnr-bg-fill-hsb {
+	background-color: rgba(var(--clr-fill-hsb), var(--wnr-opacity-bg));
+}
+
+.wnr-bg-fill-hsb-2 {
+	background-color: rgba(var(--clr-fill-primary), var(--wnr-opacity-bg));
+}
+
+.wnr-bg01 {
+	background-color: rgba(var(--clr-fill-thead-primary), var(--wnr-opacity-bg));
+}
+
+// White Space
+.wnr-white-spc {
+	white-space: nowrap;
+}
+
+// Width+content
+.wnr-max-content {
+	min-width: max-content;
+}
+
+.wnr-wid-0 {
+	width: 0;
+}
+
+.wnr-min-wid-0 {
+	min-width: 0;
+}
+
+.wnr-wid-full {
+	width: 100%;
+}
+
+.wnr-wid-8 {
+	width: 8%;
+}
+
+// Border
+.border-default {
+	border-style: var(--wnr-border-solid);
+	border-width: var(--wnr-border-width-1);
+	border-color: var(--clr-border-default);
+}
+
+.wnr-border-raw-white {
+	border-color: rgba(var(--clr-raw-white), .1);
+}
+
+.wnr-default-line-translucent {
+	border-color: var(--clr-line-default-translucent) !important;
+}
+
+.bdr-line {
+	border-width: var(--wnr-border-width-1);
+}
+
+.card-bdr {
+	border: var(--wnr-border-solid);
+	border-width: var(--wnr-border-width-1);
+}
+
+.bdr-bottom {
+	border-block-end: var(--wnr-border-solid);
+	border-block-end-width: var(--wnr-border-width-1);
+}
+
+.bdr-top {
+	border-block-start: var(--wnr-border-solid);
+	border-block-start-width: var(--wnr-border-width-1);
+}
+
+.bdr-right {
+	border-inline-end: var(--wnr-border-solid);
+	border-inline-end-width: var(--wnr-border-width-1);
+}
+
+.bdr-left {
+	border-inline-start: var(--wnr-border-solid);
+	border-inline-start-width: var(--wnr-border-width-1);
+}
+
+.card-bdr,
+.bdr-bottom,
+.bdr-top,
+.bdr-right,
+.bdr-left {
+	border-color: rgba(var(--clr-line-default), var(--wnr-opacity-border));
+
+	&.bdr-translucent {
+		border-color: var(--clr-line-default-translucent);
+	}
+}
+
+.bdr__circle-0 {
+	border-radius: 0;
+}
+
+.bdr-rgt-0 {
+	border-inline-end: var(--wnr-border-right-0);
+}
+
+.bdr-lft-0 {
+	border-inline-start: var(--wnr-border-left-0);
+}
+
+.bdr-btm-0 {
+	border-block-end: var(--wnr-border-bottom-0);
+}
+
+.bdr-top-0 {
+	border-block-start: var(--wnr-border-top-0);
+}
+
+// Background
+.bg-default {
+	background-color: rgba(var(--clr-fill-primary), var(--wnr-opacity-bg));
+}
+
+.bg-ui-fill-translucent-hover {
+	background-color: var(--clr-ui-fill-translucent-hover);
+}
+
+.bg-transparent {
+	background-color: transparent;
+}
+
+.wnr-no-tap-higlight {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.bg-raw-grey10 {
+	background-color: rgba(var(--clr-raw-grey10), var(--wnr-opacity-bg));
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll-hide {
+	scrollbar-width: none;
+	scrollbar-color: transparent transparent;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll-hide::-webkit-scrollbar {
+	@include dn;
+}
+
+.underline-link {
+	text-decoration-line: underline;
+	color: rgba(var(--clr-type-default), var(--wnr-opacity-txt));
+	text-decoration-color: rgb(var(--clr-ui-stroke-default));
+
+	&:hover {
+		text-decoration-line: underline;
+		color: var(--clr-theme-primary);
+		text-decoration-color: rgb(var(--clr-ui-stroke-primary));
+	}
+}
+
+
+// min width 1200px
+@media (width >=75em) {
+	.show-desktop {
+		@include dn;
+	}
+}
+
+// max width 1199px
+@media (width <=74.9375em) {
+	.hide-desktop {
+		@include dn;
+	}
+}
+
+// min width 1024px
+@media (width >=64em) {
+	.show-tablet {
+		@include dn;
+	}
+}
+
+// max width 1023px
+@media (width <=63.9375em) {
+	.hide-tablet {
+		@include dn;
+	}
+}
+
+// min width 992px
+@media (width >=62em) {
+	.show-tablet-mobile {
+		@include dn;
+	}
+}
+
+// max width 991px
+@media (width <=61.9375em) {
+	.hide-tablet-mobile {
+		@include dn;
+	}
+}
+
+// min width 768px
+@media (width >=48em) {
+	.show-sml-mobile {
+		@include dn;
+	}
+}
+
+// max width 767px
+@media (width <=47.9375em) {
+	.hide-sml-mobile {
+		@include dn;
+	}
+}
+
+// min width 640px
+@media (width >=40em) {
+	.show-xsml-mobile {
+		@include dn;
+	}
+}
+
+// max width 639px
+@media (width <=39.9375em) {
+	.hide-xsml-mobile {
+		@include dn;
+	}
+}
+
+// min width 576px
+@media (width >=36em) {
+	.show-mobile {
+		@include dn;
+	}
+}
+
+// max width 575px
+@media (width <=35.9375em) {
+	.hide-mobile {
+		@include dn;
+	}
+}

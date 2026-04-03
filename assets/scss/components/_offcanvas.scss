@@ -1,0 +1,197 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  2.8 offcanvas
+---------------------------------*/
+.info-offcanvas {
+	.offcanvas-info {
+		@include bg-fill-content-prime;
+		@include pfix;
+		inset-block-start: 0;
+		inset-inline-end: 0;
+		width: 400px;
+		height: 100%;
+		@include transform(translateX(calc(100% + 80px)));
+		transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+		z-index: 99999;
+		overflow-y: scroll;
+		overscroll-behavior-y: contain;
+		scrollbar-width: none;
+
+		@include respond-below ($max-xxsmall) {
+			width: 350px;
+		}
+
+		&.show-offcanvas {
+			@include transform(translateX(0%));
+		}
+	}
+}
+
+.offcanvas-overlay {
+	@include pfix;
+	content: "";
+	height: 100vh;
+	width: 100vw;
+	inset-block: 0;
+	inset-inline: 0;
+	background-color: rgba(var(--clr-raw-black), var(--wnr-opacity-80));
+	z-index: 900;
+	opacity: 0;
+	visibility: hidden;
+	@include transition(opacity .5s ease-in-out);
+
+	&.show-overlay {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.offcanvas-logo {
+	a {
+		img {
+			width: 150px;
+		}
+	}
+}
+
+.offcanvas-wrap {
+	@include prelative;
+	height: 100%;
+	padding: 1.875rem;
+
+	@include respond-below($xs) {
+		padding: 1.25rem;
+	}
+
+	.offcanvas-title {
+		font-size: var(--wnr-fs-3xl);
+		margin-block-end: .9375rem;
+	}
+
+	.offcanvas__content {
+		p {
+			@include color-type-default;
+		}
+
+		.close-btn {
+			@include prelative;
+			width: 40px;
+			height: 40px;
+			@include center;
+			@include border-radius(50%);
+			@include bg-theme-primary;
+			z-index: 9;
+			cursor: pointer;
+			font-size: var(--wnr-fs-sm);
+			@include color-raw-white;
+			@include transition(all .3s ease);
+
+			&:hover {
+				@include bg-theme-secondary;
+			}
+		}
+
+		.offcanvas-social-area {
+			margin-block: 1.25rem;
+
+			.social-icon {
+				gap: 10px;
+				justify-content: start;
+
+				a {
+					height: 40px;
+					width: 40px;
+					font-size: var(--wnr-fs-base);
+					background-color: transparent;
+					@include color-type-default;
+					@include transition(all .4s ease-in-out);
+					text-align: center;
+					@include borderDefault;
+					@include border-radius(.3125rem);
+
+					&:hover {
+						@include bg-theme-primary;
+						@include color-raw-white;
+						border-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-border));
+					}
+				}
+			}
+		}
+
+		.offcanvas-contact {
+
+			.contact-list {
+				li {
+					@include flex(center, start);
+					gap: .75rem;
+					padding-block: .625rem;
+					@include borderBottom;
+
+					.contact-icon {
+						height: 40px;
+						width: 40px;
+						@include border-radius(.3125rem);
+						@include center;
+						@include bg-theme-primary;
+						@include transition(var(--wnr-transition-default) ease-in-out);
+						font-size: var(--wnr-fs-sm);
+						@include color-raw-white;
+					}
+
+					.contact-content {
+						flex: 1;
+
+						.contact-title {
+							font-family: var(--wnr-ff-heading);
+							font-weight: var(--wnr-font-semi-bold);
+							font-size: var(--wnr-fs-base);
+							@include color-type-default;
+						}
+
+						.contact-text {
+							@include color-type-mid2;
+
+							p,
+							a {
+								@include color-type-mid2;
+								@include lh(24px);
+								font-size: var(--wnr-fs-sm);
+							}
+						}
+					}
+				}
+			}
+
+			.header-button {
+				@include flex(center, center);
+			}
+		}
+
+		.offcanvas-button {
+			margin-top: 300px;
+			@include flex(center, center);
+			gap: 20px;
+
+			@include respond('xl-max-1399.98') {
+				margin-top: 30px;
+			}
+
+			// .theme-btn {
+			// 	width: 100%;
+			// 	justify-content: center;
+			// 	padding: 19px 36px;
+			// 	background-color: $theme-blue;
+
+			// 	&::after,&::before {
+			// 		display: none;
+			// 	}
+
+			// 	&:hover {
+			// 		background-color: $white;
+			// 		@include color-type-default;
+			// 	}
+			// }
+		}
+	}
+}

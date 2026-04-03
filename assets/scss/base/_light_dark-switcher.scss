@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  1.4 light dark theme toggle
+---------------------------------*/
+.theme-toggle-wrap {
+	position: fixed;
+	top: 25%;
+	right: .375rem;
+	z-index: 111;
+	@include wnr-transition;
+
+	#theme-toggle {
+		@include wnr-transition;
+		background-color: rgba(var(--clr-switch-bg), var(--wnr-opacity-bg));
+		@include border-radius(50px);
+		@include gridcenter;
+		cursor: pointer;
+		padding: 0.25rem 0.5625rem;
+		position: relative;
+		@include widthHeight(32px, 60px);
+		@include wnr-transition;
+		justify-content: space-between;
+
+		&::before {
+			content: "";
+			@include pabsolute;
+			@include widthHeight(24px, 24px);
+			background-color: rgba(var(--clr-switch-circle-bg), var(--wnr-opacity-bg));
+			@include border-radius(var(--wnr-radius-circle));
+			z-index: 0;
+			inset-block-start: 0;
+			@include transform(translateY(0.3125rem));
+			@include wnr-transition;
+			@include center;
+		}
+
+		i {
+			z-index: 11;
+			@include wnr-transition;
+			font-size: var(--wnr-fs-sm);
+			color: rgba(var(--clr-type-mid2), var(--wnr-opacity-txt));
+		}
+	}
+}
+
+[data-theme-mode='dark'] {
+
+	#theme-toggle {
+
+		&::before {
+			@include transform(translateY(1.9375rem));
+		}
+
+		.bi-moon {
+			color: rgba(var(--clr-theme-primary), var(--wnr-opacity-txt));
+		}
+	}
+}

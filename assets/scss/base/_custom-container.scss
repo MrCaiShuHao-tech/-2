@@ -1,0 +1,160 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  1.6 custom container
+---------------------------------*/
+
+// .row {
+//     --bs-gutter-x: 30px;
+// }
+
+.gutter-y-30 {
+    --bs-gutter-y: 30px;
+}
+
+.gx-0 {
+    --bs-gutter-x: 0;
+}
+
+.row-gutters-40 {
+    --bs-gutter-x: 40px;
+}
+
+// width 991.98px
+@include respond-below($max-md) {
+    .row-gutters-40 {
+        --bs-gutter-x: 30px;
+    }
+}
+
+.custom-container {
+    max-width: 1330px;
+}
+
+// width 1800px
+@include respond-below($max-1800) {
+    .custom-container {
+        max-width: 1530px;
+    }
+}
+
+// width 1500px
+@include respond-below($max-xxl-1500) {
+    .custom-container {
+        max-width: 1320px;
+    }
+}
+
+// width 1199.98px
+@include respond-below($max-lg) {
+    .custom-container {
+        max-width: 960px;
+    }
+}
+
+// width 991.98px
+@include respond-below($max-md) {
+    .custom-container {
+        max-width: 720px;
+    }
+}
+
+// width 767.98px
+@include respond-below($max-sm) {
+    .custom-container {
+        max-width: 100%;
+    }
+}
+
+// width 576px and 767px
+@include respond-between($sm, $max-sm) {
+    .custom-container {
+        max-width: 540px;
+    }
+}
+
+.container .container {
+    width: 100%;
+}
+
+.container .container,
+.container .container-fluid,
+.container-fluid .container,
+.container-fluid .container-fluid {
+    padding-inline: 0;
+}
+
+// width 1400px
+@include respond-above($xxl) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: var(--wnr-container-default);
+    }
+}
+
+.large-container {
+    position: static;
+    max-width: var(--wnr-container-large);
+    padding-inline: 15px;
+    padding-block: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.auto-container {
+    position: static;
+    max-width: var(--wnr-container-default);
+    padding-inline: 15px;
+    padding-block: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.small-container {
+    position: static;
+    max-width: var(--wnr-container-small);
+    padding-inline: 15px;
+    padding-block: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+// width 1500px
+@include respond-below($max-xxl-1500) {
+    .container {
+        max-width: 1260px;
+    }
+}
+
+// width 1199.98px
+@include respond-below($max-lg) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+// width 991.98px
+@include respond-below($max-md) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+// width 767.98px
+@include respond-below($max-sm) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+// width 576px and 767px
+// @include respond-between($sm, $max-sm) {
+//     .container {
+//         max-width: 540px;
+//     }
+// }

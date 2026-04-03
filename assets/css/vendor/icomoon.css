@@ -1,0 +1,271 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../fonts/icomoon/icomoon.eot?nf1uxi');
+  src: url('../../fonts/icomoon/icomoon.eot?nf1uxi#iefix') format('embedded-opentype'),
+    url('../../fonts/icomoon/icomoon.ttf?nf1uxi') format('truetype'),
+    url('../../fonts/icomoon/icomoon.woff?nf1uxi') format('woff'),
+    url('../../fonts/icomoon/icomoon.svg?nf1uxi#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-double-right-arrow2:before {
+  content: "\e93c";
+}
+
+.icon-left-arrow3:before {
+  content: "\e93a";
+}
+
+.icon-right-arrow4:before {
+  content: "\e93b";
+}
+
+.icon-right-arrow2:before {
+  content: "\e938";
+}
+
+.icon-left-arrow-2:before {
+  content: "\e939";
+}
+
+.icon-air-conditioner:before {
+  content: "\e900";
+}
+
+.icon-air-conditioning:before {
+  content: "\e901";
+}
+
+.icon-basin:before {
+  content: "\e902";
+}
+
+.icon-business:before {
+  content: "\e903";
+}
+
+.icon-calendar:before {
+  content: "\e904";
+}
+
+.icon-calendar-2:before {
+  content: "\e905";
+}
+
+.icon-call-service:before {
+  content: "\e906";
+}
+
+.icon-cart:before {
+  content: "\e907";
+}
+
+.icon-check:before {
+  content: "\e908";
+}
+
+.icon-check-box:before {
+  content: "\e909";
+}
+
+.icon-checked:before {
+  content: "\e90a";
+}
+
+.icon-clock:before {
+  content: "\e90b";
+}
+
+.icon-comments:before {
+  content: "\e90c";
+}
+
+.icon-conversation:before {
+  content: "\e90d";
+}
+
+.icon-double-right-arrow:before {
+  content: "\e90e";
+}
+
+.icon-double-up-arrow:before {
+  content: "\e90f";
+}
+
+.icon-down-arrow:before {
+  content: "\e910";
+}
+
+.icon-download:before {
+  content: "\e911";
+}
+
+.icon-email:before {
+  content: "\e912";
+}
+
+.icon-gas-bottle:before {
+  content: "\e913";
+}
+
+.icon-happy:before {
+  content: "\e914";
+}
+
+.icon-heat-system:before {
+  content: "\e915";
+}
+
+.icon-hello:before {
+  content: "\e916";
+}
+
+.icon-left-arrow:before {
+  content: "\e917";
+}
+
+.icon-location:before {
+  content: "\e918";
+}
+
+.icon-location-2:before {
+  content: "\e919";
+}
+
+.icon-padlock:before {
+  content: "\e91a";
+}
+
+.icon-paper-plane:before {
+  content: "\e91b";
+}
+
+.icon-pipeline:before {
+  content: "\e91c";
+}
+
+.icon-play:before {
+  content: "\e91d";
+}
+
+.icon-plumber:before {
+  content: "\e91e";
+}
+
+.icon-plus:before {
+  content: "\e91f";
+}
+
+.icon-pump:before {
+  content: "\e920";
+}
+
+.icon-repair:before {
+  content: "\e921";
+}
+
+.icon-repairing:before {
+  content: "\e922";
+}
+
+.icon-right-arrow:before {
+  content: "\e923";
+}
+
+.icon-right-arrow-2:before {
+  content: "\e924";
+}
+
+.icon-right-arrow-3:before {
+  content: "\e925";
+}
+
+.icon-search:before {
+  content: "\e926";
+}
+
+.icon-snowflake:before {
+  content: "\e927";
+}
+
+.icon-solar-cell:before {
+  content: "\e928";
+}
+
+.icon-solar-panel:before {
+  content: "\e929";
+}
+
+.icon-speech-bubble:before {
+  content: "\e92a";
+}
+
+.icon-star:before {
+  content: "\e92b";
+}
+
+.icon-sun:before {
+  content: "\e92c";
+}
+
+.icon-support:before {
+  content: "\e92d";
+}
+
+.icon-telephone:before {
+  content: "\e92e";
+}
+
+.icon-telephone-2:before {
+  content: "\e92f";
+}
+
+.icon-tools:before {
+  content: "\e930";
+}
+
+.icon-underfloor-heating:before {
+  content: "\e931";
+}
+
+.icon-up-arrow:before {
+  content: "\e932";
+}
+
+.icon-user:before {
+  content: "\e933";
+}
+
+.icon-water-heater:before {
+  content: "\e934";
+}
+
+.icon-water-hose:before {
+  content: "\e935";
+}
+
+.icon-wind:before {
+  content: "\e936";
+}
+
+.icon-wind-power:before {
+  content: "\e937";
+}

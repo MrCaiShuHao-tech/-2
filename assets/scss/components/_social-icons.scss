@@ -1,0 +1,95 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  2.10 social icons
+---------------------------------*/
+.social-media {
+    @include flex(center, center);
+    flex-wrap: wrap;
+
+    li {
+        --size: 36px;
+
+        a {
+            @include prelative;
+            width: var(--size);
+            height: var(--size);
+            @include bg-raw-white;
+            @include center;
+            @include transition(.3s all);
+            @include color-theme-primary;
+            z-index: 2;
+            @include font-16;
+            border-radius: var(--wnr-radius-circle);
+
+            &:hover {
+                @include color-raw-white;
+            }
+
+            i {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &.icon-bg-transp {
+        li {
+            a {
+                background-color: transparent;
+                height: auto;
+                width: auto;
+                @include lh(initial);
+            }
+        }
+    }
+
+    &.transparent-border {
+        li {
+            a {
+                line-height: 2.1875rem;
+                background-color: transparent;
+                @include borderDefault;
+
+                &:hover {
+                    border-color: transparent !important;
+                }
+            }
+        }
+    }
+
+    &.hover-bg-primary {
+        li {
+            a {
+
+                &:hover {
+                    @include bg-theme-primary;
+                }
+            }
+        }
+    }
+
+    &.bg-primary {
+        li {
+            a {
+                @include bg-theme-primary;
+                @include borderDefault;
+                @include transition(.5s);
+                @include lh(2.5rem);
+                @include color-raw-white;
+
+                &:hover {
+                    background-color: transparent;
+                    @include color-theme-primary;
+                }
+            }
+        }
+    }
+
+    &.color-white {
+        li {
+            a {
+                @include color-raw-white;
+            }
+        }
+    }
+}

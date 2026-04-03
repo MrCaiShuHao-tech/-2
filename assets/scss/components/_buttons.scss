@@ -1,0 +1,454 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  2.6 buttons
+---------------------------------*/
+
+/* Base button styles */
+.button {
+    @include inline-flex-center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: var(--wnr-font-semi-bold);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    @include prelative;
+    overflow: hidden;
+    min-width: 200px;
+    text-align: center;
+    letter-spacing: 0.5px;
+
+    &::before {
+        content: '';
+        @include pabsolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.7s ease;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        &::before {
+            left: 100%;
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Primary Button */
+.button-primary {
+    background: linear-gradient(135deg,
+            rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-bg)),
+            rgba(var(--clr-bg-raw-primary-light), var(--wnr-opacity-bg)));
+    color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+    box-shadow:
+        0 8px 20px rgba(0, 64, 52, 0.25),
+        0 2px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+        background: linear-gradient(135deg,
+                rgba(var(--clr-bg-raw-primary-dark), var(--wnr-opacity-bg)),
+                rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-bg)));
+        color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+        box-shadow: 0 12px 25px rgba(0, 64, 52, 0.35);
+    }
+}
+
+/* Secondary Button */
+.button-secondary {
+    background: linear-gradient(135deg,
+            rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-bg)),
+            rgba(var(--clr-bg-raw-secondary-light), var(--wnr-opacity-bg)));
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    box-shadow:
+        0 8px 20px rgba(198, 217, 132, 0.25),
+        0 2px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    &:hover {
+        background: linear-gradient(135deg,
+                rgba(var(--clr-bg-raw-secondary-dark), var(--wnr-opacity-bg)),
+                rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-bg)));
+        color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+        box-shadow: 0 12px 25px rgba(198, 217, 132, 0.35);
+    }
+}
+
+/* Optional Button */
+.button-optional {
+    background: linear-gradient(135deg,
+            rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-bg)),
+            rgba(var(--clr-bg-raw-optional-light), var(--wnr-opacity-bg)));
+    color: rgba(var(--clr-bg-raw-dark1), var(--wnr-opacity-txt));
+    box-shadow:
+        0 8px 20px rgba(242, 205, 92, 0.25),
+        0 2px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    &:hover {
+        background: linear-gradient(135deg,
+                rgba(var(--clr-bg-raw-optional-dark), var(--wnr-opacity-bg)),
+                rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-bg)));
+        color: rgba(var(--clr-bg-raw-dark1), var(--wnr-opacity-txt));
+        box-shadow: 0 12px 25px rgba(242, 205, 92, 0.35);
+    }
+}
+
+/* Transparent Button */
+.button-transparent {
+    background: rgba(255, 255, 255, 0.2);
+    color: #004034;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 64, 52, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.button-transparent:hover {
+    background: rgba(0, 64, 52, 0.08);
+    border-color: rgba(0, 64, 52, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Primary Bordered Button */
+.bordered-primary {
+    background: transparent;
+    border: 2px solid rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-border));
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    box-shadow: inset 0 0 0 0 rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-shadow)), 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+        box-shadow: inset 0 -100px 0 0 rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-shadow)), 0 8px 20px rgba(0, 0, 0, 0.06);
+        color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+    }
+}
+
+/* Secondary Bordered Button */
+.bordered-secondary {
+    background: transparent;
+    border: 2px solid rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-border));
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    box-shadow: inset 0 0 0 0 rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-shadow)), 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+        box-shadow: inset 0 -100px 0 0 rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-shadow)), 0 8px 20px rgba(0, 0, 0, 0.06);
+        color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    }
+}
+
+/* Optional Bordered Button */
+.bordered-optional {
+    background: transparent;
+    border: 2px solid rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-border));
+    color: rgba(var(--clr-bg-raw-dark1), var(--wnr-opacity-txt));
+    box-shadow: inset 0 0 0 0 rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-shadow)), 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+        box-shadow: inset 0 -100px 0 0 rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-shadow)), 0 8px 20px rgba(0, 0, 0, 0.06);
+        color: rgba(var(--clr-bg-raw-dark1), var(--wnr-opacity-txt));
+    }
+}
+
+/* White Bordered Button */
+.bordered-white {
+    background: transparent;
+    border: 2px solid rgba(var(--clr-raw-white), var(--wnr-opacity-border));
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    box-shadow: inset 0 0 0 0 rgba(var(--clr-raw-white), var(--wnr-opacity-shadow)), 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+        box-shadow: inset 0 -100px 0 0 rgba(var(--clr-raw-white), var(--wnr-opacity-shadow)), 0 8px 20px rgba(0, 0, 0, 0.06);
+        color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    }
+}
+
+/* White Button */
+.button-white {
+    background-color: rgba(var(--clr-raw-white), var(--wnr-opacity-bg));
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.06),
+        0 1px 0 rgba(var(--clr-raw-white), var(--wnr-opacity-shadow)) inset,
+        0 -1px 0 rgba(var(--clr-raw-white), var(--wnr-opacity-shadow)) inset;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+
+    &:hover {
+        background-color: rgba(var(--clr-raw-grey800), var(--wnr-opacity-bg));
+        box-shadow: 0 12px 25px rgba(var(--clr-raw-black), var(--wnr-opacity-10));
+    }
+}
+
+/* Icon Button */
+.button-icon {
+    span {
+        @include prelative;
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+
+        i {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+    }
+
+    &:hover {
+        transform: translateY(-4px) scale(1.01);
+
+        i {
+            transform: translateX(3px);
+        }
+    }
+}
+
+/* Link Button */
+.button-link {
+    @include prelative;
+    @include inline-flex-center;
+    padding: 0.5rem 0.3125rem;
+    font-size: var(--wnr-fs-base);
+    font-weight: var(--wnr-font-medium);
+    background: transparent;
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    min-width: auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-block-start: 0.5rem;
+
+    &::before {
+        content: '';
+        @include pabsolute;
+        min-width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg,
+                rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-bg)),
+                rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-bg)));
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    &:hover {
+        color: rgba(var(--clr-bg-raw-primary-light), var(--wnr-opacity-txt));
+
+        &::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+}
+
+/* Button hover up */
+.btn-hover-up {
+    @include prelative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+            rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-bg)),
+            rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-bg)));
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    padding: 1rem 2rem;
+    @include border-radius(0.75rem);
+    font-weight: var(--wnr-font-bold);
+    letter-spacing: 1.5px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(242, 205, 92, 0.3), 0 0 0 2px rgba(242, 205, 92, 0.3);
+    z-index: 2;
+    transform: perspective(1px) translateZ(0);
+
+    &::before {
+        @include pabsolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, var(--clr-bg-primary) 0%, var(--clr-bg-primary-light) 100%);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.2s ease;
+        z-index: 1;
+    }
+
+    span {
+        @include prelative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: var(--wnr-fs-base);
+        transition: all 0.3s ease;
+
+        i {
+            @include prelative;
+            z-index: 3;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+
+        &::before {
+            transform: scaleY(1);
+        }
+
+        span {
+            color: rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-txt));
+            transform: translateX(5px);
+        }
+    }
+}
+
+/* Animated Button Styles */
+.btn-animated-primary,
+.btn-animated-secondary,
+.btn-animated-optional {
+    @include prelative;
+    z-index: 1;
+    overflow: hidden;
+    color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+    background: linear-gradient(135deg,
+            rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-bg)),
+            rgba(var(--clr-bg-raw-primary-light), var(--wnr-opacity-bg)));
+    box-shadow: 0 8px 20px rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-20));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &::after {
+        content: '';
+        @include pabsolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background: linear-gradient(90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0) 100%);
+        transform: skewX(-25deg);
+        transition: all 0.75s ease;
+    }
+
+    &:hover {
+        color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+        box-shadow: 0 12px 30px rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-30));
+
+        &::after {
+            left: 100%;
+        }
+    }
+}
+
+/* Animated Secondary Button */
+.btn-animated-secondary {
+    color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+    background: linear-gradient(135deg,
+            rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-bg)),
+            rgba(var(--clr-bg-raw-secondary-light), var(--wnr-opacity-bg)));
+    box-shadow: 0 8px 20px rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-20));
+
+    &:hover {
+        color: rgba(var(--clr-bg-raw-primary), var(--wnr-opacity-txt));
+        box-shadow: 0 12px 30px rgba(var(--clr-bg-raw-secondary), var(--wnr-opacity-30));
+    }
+}
+
+/* Animated Secondary Button */
+.btn-animated-optional {
+    color: rgba(var(--clr-bg-raw-dark1), var(--wnr-opacity-txt));
+    background: linear-gradient(135deg,
+            rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-bg)),
+            rgba(var(--clr-bg-raw-optional-light), var(--wnr-opacity-bg)));
+    box-shadow: 0 8px 20px rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-20));
+
+    &:hover {
+        color: rgba(var(--clr-bg-raw-dark1), var(--wnr-opacity-txt));
+        box-shadow: 0 12px 30px rgba(var(--clr-bg-raw-optional), var(--wnr-opacity-30));
+    }
+}
+
+/* Glossy Button Styles */
+.button-glossy {
+    background: linear-gradient(135deg, #004034, #005a48);
+    border: none;
+    color: white;
+    @include prelative;
+    box-shadow:
+        0 10px 25px rgba(0, 64, 52, 0.25),
+        0 -3px 10px rgba(255, 255, 255, 0.15) inset,
+        0 3px 5px rgba(0, 0, 0, 0.1) inset;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &::after {
+        content: '';
+        @include pabsolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    &:hover {
+        box-shadow:
+            0 15px 35px rgba(0, 64, 52, 0.35),
+            0 -3px 10px rgba(255, 255, 255, 0.2) inset,
+            0 3px 5px rgba(0, 0, 0, 0.15) inset;
+    }
+}
+
+
+/* Gold Button */
+.button-gold {
+    background: linear-gradient(135deg, #f2cd5c, #e5b94e);
+    color: #333;
+    @include prelative;
+    box-shadow:
+        0 10px 25px rgba(242, 205, 92, 0.25),
+        0 -2px 6px rgba(255, 255, 255, 0.3) inset,
+        0 2px 4px rgba(0, 0, 0, 0.1) inset;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button-gold::after {
+    content: '';
+    @include pabsolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), transparent);
+}
+
+.button-gold:hover {
+    box-shadow:
+        0 15px 35px rgba(242, 205, 92, 0.35),
+        0 -2px 6px rgba(255, 255, 255, 0.4) inset,
+        0 2px 4px rgba(0, 0, 0, 0.15) inset;
+}

@@ -1,0 +1,22 @@
+@use '../../abstracts' as *;
+
+/*---------------------------------
+/*  3.2 header common
+---------------------------------*/
+
+.wnr-sticky {
+	position: fixed;
+	top: 0;
+	z-index: 111;
+	inset-inline-end: 0;
+	inset-inline-start: 0;
+	width: 100%;
+	animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+	border-top: 0;
+	background-color: rgba(var(--clr-fill-content-prime), var(--wnr-opacity-bg));
+	box-shadow: 0px 2px 4px rgba(29, 29, 29, 0.14);
+
+	@include respond-below($max-lg-1024) {
+		animation: unset;
+	}
+}

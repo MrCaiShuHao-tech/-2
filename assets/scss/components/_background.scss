@@ -1,0 +1,347 @@
+@use "../abstracts" as *;
+
+/*----------------------------------------*/
+/*  background
+/*----------------------------------------*/
+
+.bg-img {
+    @include prelative;
+    z-index: 1;
+}
+
+.bg-overlay {
+    &::before {
+        content: '';
+        @include pabsolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(#1b1a1a, 0.25);
+    }
+}
+
+.include-bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+/*===== Data Background Color =====*/
+[data-bg-color] {
+    background-color: rgba(var(--clr-raw-black), var(--wnr-opacity-bg));
+}
+
+[data-bg-color=theme-primary] {
+    background-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-bg));
+}
+
+[data-bg-color=theme-secondary] {
+    background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+}
+
+[data-bg-color=theme-tertiary] {
+    background-color: rgba(var(--clr-theme-tertiary), var(--wnr-opacity-bg));
+}
+
+[data-bg-color=bg-fill-content-prime] {
+    background-color: rgba(var(--clr-fill-content-prime), var(--wnr-opacity-bg));
+}
+
+[data-bg-color=bg-fill-content-alternate] {
+    background-color: rgba(var(--clr-fill-content-alternate), var(--wnr-opacity-bg));
+}
+
+[data-bg-color=bg-fill-hsb-scorecell] {
+    background-color: rgba(var(--clr-fill-hsb-scorecell), var(--wnr-opacity-bg));
+}
+
+[data-bg-color=bg-fill-thead-primary] {
+    background-color: rgba(var(--clr-fill-thead-primary), var(--wnr-opacity-bg));
+}
+
+/*===== Data Overlay Color =====*/
+[data-overlay=light] {
+    background-color: rgba(var(--clr-raw-white), var(--wnr-opacity-bg));
+}
+
+[data-overlay=dark] {
+    background-color: rgba(var(--clr-raw-black), var(--wnr-opacity-bg));
+}
+
+[data-overlay=theme-primary] {
+    background-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-bg));
+}
+
+[data-overlay=theme-secondary] {
+    background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+}
+
+[data-overlay=theme-tertiary] {
+    background-color: rgba(var(--clr-theme-tertiary), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-content-prime] {
+    background-color: rgba(var(--clr-fill-content-prime), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-content-alternate] {
+    background-color: rgba(var(--clr-fill-content-alternate), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-hsb-scorecell] {
+    background-color: rgba(var(--clr-fill-hsb-scorecell), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-thead-primary] {
+    background-color: rgba(var(--clr-fill-thead-primary), var(--wnr-opacity-bg));
+}
+
+/*===== Data Overlay =====*/
+[data-overlay] {
+    @include prelative;
+    z-index: 1;
+}
+
+[data-overlay]::before {
+    @include pabsolute;
+    content: "";
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/*===== Overlay Color =====*/
+[data-overlay=light]::before {
+    background-color: rgba(var(--clr-raw-white), var(--wnr-opacity-bg));
+}
+
+[data-overlay=dark]::before {
+    background-color: rgba(var(--clr-raw-black), var(--wnr-opacity-bg));
+}
+
+[data-overlay=theme-primary]::before {
+    background-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-bg));
+}
+
+[data-overlay=theme-secondary]::before {
+    background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+}
+
+[data-overlay=theme-tertiary]::before {
+    background-color: rgba(var(--clr-theme-tertiary), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-content-prime]::before {
+    background-color: rgba(var(--clr-fill-content-prime), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-content-alternate]::before {
+    background-color: rgba(var(--clr-fill-content-alternate), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-hsb-scorecell]::before {
+    background-color: rgba(var(--clr-fill-hsb-scorecell), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-fill-thead-primary]::before {
+    background-color: rgba(var(--clr-fill-thead-primary), var(--wnr-opacity-bg));
+}
+
+[data-overlay=bg-footer]::before {
+    background-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-bg));
+}
+
+/*===== Overlay Opacity =====*/
+[data-overlay-opacity="1"]::before {
+    opacity: var(--wnr-opacity-10);
+}
+
+[data-overlay-opacity="2"]::before {
+    opacity: var(--wnr-opacity-20);
+}
+
+[data-overlay-opacity="3"]::before {
+    opacity: var(--wnr-opacity-30);
+}
+
+[data-overlay-opacity="4"]::before {
+    opacity: var(--wnr-opacity-40);
+}
+
+[data-overlay-opacity="5"]::before {
+    opacity: var(--wnr-opacity-50);
+}
+
+[data-overlay-opacity="6"]::before {
+    opacity: var(--wnr-opacity-60);
+}
+
+[data-overlay-opacity="7"]::before {
+    opacity: var(--wnr-opacity-70);
+}
+
+[data-overlay-opacity="8"]::before {
+    opacity: var(--wnr-opacity-80);
+}
+
+[data-overlay-opacity="9"]::before {
+    opacity: var(--wnr-opacity-90);
+}
+
+.sec-bg1 {
+    background-color: var(--vtc-bg-common-2);
+}
+
+.sec-bg2 {
+    background-color: var(--vtc-bg-common-3);
+}
+
+.sec-bg3 {
+    background-color: var(--vtc-bg-common-4);
+}
+
+.sec-bg4 {
+    background-color: var(--vtc-bg-common-5);
+}
+
+
+.white-bg1 {
+    background-color: var(--vtc-bg-white1);
+}
+
+.white-bg2 {
+    background-color: var(--vtc-bg-white2);
+}
+
+.white-bg3 {
+    background-color: var(--vtc-bg-white3);
+}
+
+.white-bg4 {
+    background-color: var(--vtc-bg-white4);
+}
+
+.white-bg5 {
+    background-color: var(--vtc-bg-white7);
+}
+
+.pattern-bg01 {
+    @include prelative;
+
+    &::before {
+        content: "";
+        @include overlay;
+        @include background;
+        background-image: url(../images/bg/sec-bg02.png);
+    }
+}
+
+.shape-bg2 {
+    @include prelative;
+
+    &::after {
+        content: "";
+        @include pabsolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/bg/service2-bg1.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -2;
+    }
+}
+
+.shape-bg3 {
+    @include prelative;
+
+    &::after {
+        content: "";
+        @include pabsolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/bg/case3-bg1.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -2;
+    }
+}
+
+.shape-bg4 {
+    background-color: var(--vtc-bg-common-14);
+}
+
+.shape-bg5 {
+    background-color: var(--vtc-bg-common-17);
+}
+
+.dark-mode {
+    .shape-bg1 {
+        @include prelative;
+
+        &::after {
+            content: "";
+            @include pabsolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url(../img/bg/element-bg1.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .shape-bg2 {
+        @include prelative;
+
+        &::after {
+            content: "";
+            @include pabsolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url(../img/bg/service2-bg2.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -2;
+        }
+    }
+
+    .shape-bg3 {
+        @include prelative;
+
+        &::after {
+            content: "";
+            @include pabsolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url(../img/bg/case3-bg2.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -2;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+@use '../../abstracts' as *;
+
+/*---------------------------------
+/*  8.10 service details
+---------------------------------*/
+
+.single-service-wrap {
+    overflow: var(--wnr-overflow-fix);
+    // @include bg-fill-content-prime;
+    @include prelative;
+    // height: 100%;
+
+    .single-service-head {
+        @include prelative;
+
+        .single-service-thumbnail {
+            @include prelative;
+            overflow: var(--wnr-overflow-fix);
+            @include border-radius(1.25rem);
+            padding-block: 0 var(--size-15);
+            margin-block-end: .75rem;
+
+            img {
+                width: 100%;
+                @include border-radius(1.25rem);
+            }
+        }
+
+        .single-service-title {
+            .service-title {
+                @include font-28;
+                @include lh(36px);
+                margin-block-end: 15px;
+            }
+        }
+    }
+
+    .single-service-content {
+
+        .service-text {
+            @include color-type-mid2;
+            margin-block-end: var(--size-15);
+        }
+
+        .service-content-title {
+            margin-block-end: var(--size-15);
+        }
+    }
+
+    p {
+        a {
+            @include color-theme-primary;
+        }
+    }
+
+    .service-gallery-img {
+        @include flexbox;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+
+        .gallery-img {
+            @include prelative;
+            width: 100%;
+            overflow: var(--wnr-overflow-fix);
+            @include border-radius(var(--wnr-radius-default));
+
+            @include respond-above($sm) {
+                width: calc(50% - .625rem);
+            }
+
+            img {
+                width: 100%;
+                overflow: var(--wnr-overflow-fix);
+                @include border-radius(var(--wnr-radius-default));
+            }
+        }
+    }
+}
+
+// Sidebar Widget Services
+.widget-services {
+    .widget-service-list {
+        @include flexcol;
+        gap: var(--size-10);
+
+        li {
+            padding-inline: var(--size-15);
+
+            a {
+                @include flex(center, space-between);
+                font-size: var(--wnr-fs-sm);
+                font-weight: var(--wnr-font-regular);
+                @include lh(24px);
+                padding-block: var(--size-10);
+                padding-inline: 1.25rem 1rem;
+                @include bg-fill-hsb-scorecell;
+                @include wnr-transition;
+                @include color-type-mid1;
+                @include border-radius(3.125rem);
+                @include borderDefault;
+                font-weight: var(--wnr-font-medium);
+
+                .arrow-icon {
+                    @include widthHeight(30px, 30px);
+                    @include center;
+                    @include bg-theme-primary;
+                    @include border-radius(var(--wnr-radius-circle));
+                    font-size: var(--wnr-fs-sm);
+                    @include color-raw-white;
+                }
+
+                &:hover {
+                    @include bg-theme-primary;
+                    @include color-raw-white;
+                    border-color: rgba(var(--clr-theme-primary), var(--wnr-opacity-border));
+
+                    .arrow-icon {
+                        @include bg-theme-secondary;
+                        @include color-raw-white;
+                    }
+                }
+            }
+        }
+    }
+}

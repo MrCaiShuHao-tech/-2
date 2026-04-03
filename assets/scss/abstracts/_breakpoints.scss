@@ -1,0 +1,76 @@
+// Responsive Variables
+$max-xs: '(width <=35.99875em)'; // max-xs device max width 575.98px
+$max-sm: '(width <=47.99875em)'; // max-sm device max width 767.98px
+$max-md: '(width <=61.99875em)'; // max-md device max width 991.98px
+$max-lg: '(width <=74.99875em)'; // max-lg device max width 1199.98px
+$max-xl: '(width <=87.49875em)'; // max-xl device max width 1399.98px
+$max-xxl: '(width <=99.99875em)'; // max-xxl device max width 1599.98px
+$max-xxxl: '(width <=106.24875em)'; // max-xxxl device max width 1699.98px
+
+$min-sm: '(width >=36em)'; // min-sm device min width 576px
+$min-md: '(width >=48em)'; // min-md device min width 768px
+$min-lg: '(width >=62em)'; // min-lg device min width 992px
+$min-xl: '(width >=75em)'; // min-xl device min width 1200px
+$min-xxl: '(width >=87.5em)'; // min-xxl device min width 1400px
+$min-xxxl: '(width >=100em)'; // min-xxxl device min width 1600px
+$min-4xl: '(width >=106.25em)'; // min-4xl device min width 1700px
+
+$min-max-sm: '(36em <=width <=47.9375em)'; // min-max-sm device min 576px & max 767px
+$min-max-md: '(48em <=width <=61.9375em)'; // min-max-md device min 768px & max 991px
+$min-max-lg: '(62em <=width <=75em)'; // min-max-lg device min 992px & max 1200px
+$min-max-xl: '(75em <=width <=87.5em)'; // min-max-xl device min 1200px & max 1400px
+$min-max-xxl: '(87.5em <=width <=100em)'; // min-max-xxl device min 1400px & max 1600px
+
+$xxsm-320: 20em; // min-xxsm device min width 320px
+$max-xxsm-320: 20em; // max-xxsm device max width 320px
+
+$xxsm-350: 21.875em; // min-xxsm device min width 350px
+$max-xxsm-350: 21.875em; // max-xxsm device max width 350px
+
+$xxsm: 22.5em; // min-xxsm device min width 360px
+$max-xxsm: 22.5em; // max-xxsm device max width 360px
+
+$xxsmall: 28.125em; // min-xxsmall device min width 450px
+$max-xxsmall: 28.1238em; // max-xxsmall device max width 449.98px
+
+$xxs: 30em; // min-xxs device min width 480px
+$max-xxs: 29.99875em; // max-xxs device max width 479.98px
+
+$xs: 35.99875em; // max-xs device max width 575.98px
+$max-xs: 35.99875em; // max-xs device max width 575.98px
+
+$sm: 36em; // min-sm device min width 576px
+$max-xs: 35.99875em; // max-xs device max width 575.98px
+
+$md: 48em; // min-md device min width 768px
+$max-sm: 47.99875em; // max-sm device max width 767.98px
+
+$lg: 62em; // min-lg device min width 992px
+$max-md: 61.99875em; // max-md device max width 991.98px
+
+$lg-1024: 64em; // min-lg device min width 1024px
+$max-lg-1024: 63.99875em; // max-lg device max width 1023.98px
+
+$xl: 75em; // min-xl device min width 1200px
+$max-lg: 74.99875em; // max-lg device max width 1199.98px
+
+$xxl: 87.5em; // min-xxl device min width 1400px
+$max-xl: 87.49875em; // max-xl device max width 1399.98px
+
+$xxxl: 100em; // min-xxxl device min width 1600px
+$max-xxl: 99.99875em; // max-xxl device max width 1599.98px
+
+$xl4: 118.6875em; // min-xl4 device min width 1899px
+$max-xxxl: 106.24875em; // max-xxxl device max width 1699.98px
+
+$max-xl-1280: 80em; // max-xl-1280 device max width 1280px
+$max-xxl-1480: 92.5em; // max-xxl-1480 device max width 1480px
+$max-xxl-1500: 93.75em; // max-xxl-1500 device max width 1500px
+$max-1800: 112.5em; // max-1800 device max width 1800px
+$custom-640: 40em; // custom device width 640px
+$custom-780: 48.75em; // custom device width 780px
+$custom-781: 48.8125em; // custom device width 781px
+$custom-800: 50em; // custom device width 800px
+$custom-810: 50.625em; // custom device width 810px
+$custom-815: 50.9375em; // custom device width 815px
+$custom-820: 51.25em; // custom device width 820px

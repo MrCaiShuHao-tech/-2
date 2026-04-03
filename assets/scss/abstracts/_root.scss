@@ -1,0 +1,225 @@
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'functions' as *;
+@use 'global' as *;
+
+/* spacing */
+$spaces: (
+    "1": #{rem(1px)},
+    "2": #{rem(2px)},
+    "3": #{rem(3px)},
+    "4": #{rem(4px)},
+    "5": #{rem(5px)},
+    "6": #{rem(6px)},
+    "7": #{rem(7px)},
+    "8": #{rem(8px)},
+    "9": #{rem(9px)},
+    "10": #{rem(10px)},
+    "11": #{rem(11px)},
+    "12": #{rem(12px)},
+    "13": #{rem(13px)},
+    "14": #{rem(14px)},
+    "15": #{rem(15px)},
+    "16": #{rem(16px)},
+    "17": #{rem(17px)},
+    "18": #{rem(18px)},
+    "19": #{rem(19px)},
+    "20": #{rem(20px)},
+    "21": #{rem(21px)},
+    "22": #{rem(22px)},
+    "23": #{rem(23px)},
+    "24": #{rem(24px)},
+    "25": #{rem(25px)},
+    "26": #{rem(26px)},
+    "27": #{rem(27px)},
+    "28": #{rem(28px)},
+    "29": #{rem(29px)},
+    "30": #{rem(30px)},
+    "31": #{rem(31px)},
+    "32": #{rem(32px)},
+    "33": #{rem(33px)},
+    "34": #{rem(34px)},
+    "35": #{rem(35px)},
+    "36": #{rem(36px)},
+    "40": #{rem(40px)},
+    "41": #{rem(41px)},
+    "42": #{rem(42px)},
+    "43": #{rem(43px)},
+    "44": #{rem(44px)},
+    "45": #{rem(45px)},
+    "46": #{rem(46px)},
+    "47": #{rem(47px)},
+    "48": #{rem(48px)},
+    "49": #{rem(49px)},
+    "50": #{rem(50px)},
+    "51": #{rem(51px)},
+    "52": #{rem(52px)},
+    "53": #{rem(53px)},
+    "54": #{rem(54px)},
+    "55": #{rem(55px)},
+    "56": #{rem(56px)},
+    "57": #{rem(57px)},
+    "58": #{rem(58px)},
+    "59": #{rem(59px)},
+    "60": #{rem(60px)},
+    "64": #{rem(64px)},
+    "68": #{rem(68px)},
+    "72": #{rem(72px)},
+    "76": #{rem(76px)},
+    "80": #{rem(80px)},
+    "85": #{rem(85px)},
+    "90": #{rem(90px)},
+    "96": #{rem(96px)},
+    "110": #{rem(110px)},
+    "120": #{rem(120px)},
+    "144": #{rem(144px)},
+    "136": #{rem(136px)},
+    "160": #{rem(160px)},
+);
+
+$font-sizes: (
+    "xs": #{rem(12px)},
+    "sm": #{rem(14px)},
+    "md": #{rem(16px)},
+    "lg": #{rem(18px)},
+    "xl": #{rem(20px)},
+    "2xl": #{rem(24px)},
+    "3xl": #{rem(30px)},
+    "4xl": #{rem(36px)},
+    "5xl": #{rem(48px)},
+    "6xl": #{rem(60px)},
+);
+
+:root {
+
+    /**
+    @color declaration
+    */
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+    /**
+    @spacing
+    */
+    @each $property, $value in $spaces {
+        --size-#{$property}: #{$value};
+    }
+
+    /**
+    @font family declaration
+    */
+    @each $ff, $shades in $font-family {
+        @each $shade, $value in $shades {
+            --wnr-#{$ff}-#{$shade}: #{$value};
+        }
+    }
+
+    /**
+    @font size declaration
+    */
+    @each $fs, $shades in $font-size {
+        @each $shade, $value in $shades {
+            --wnr-#{$fs}-#{$shade}: #{$value};
+        }
+    }
+
+    // font sizes
+    @each $property, $value in $font-sizes {
+        --font-#{$property}: #{$value};
+    }
+
+    /**
+    @font weight declaration
+    */
+    @each $fw, $shades in $font-scale {
+        @each $shade, $value in $shades {
+            --wnr-#{$fw}-#{$shade}: #{$value};
+        }
+    }
+
+    /**
+    @Global varialbes declaration
+    */
+
+    /* border radius */
+    @each $radius, $shades in $border-radius {
+        @each $shade, $value in $shades {
+            --wnr-#{$radius}-#{$shade}: #{$value};
+        }
+    }
+
+    /* container width */
+    @each $global, $shades in $container-width {
+        @each $shade, $value in $shades {
+            --wnr-#{$global}-#{$shade}: #{$value};
+        }
+    }
+
+    /* flexbox shrink */
+    @each $global, $shades in $shrink {
+        @each $shade, $value in $shades {
+            --wnr-#{$global}-#{$shade}: #{$value};
+        }
+    }
+
+    /* opacity */
+    @each $global, $shades in $opacity {
+        @each $shade, $value in $shades {
+            --wnr-#{$global}-#{$shade}: #{$value};
+        }
+    }
+
+    /* overflow */
+    @each $global, $shades in $overflow {
+        @each $shade, $value in $shades {
+            --wnr-#{$global}-#{$shade}: #{$value};
+        }
+    }
+
+    /* border style */
+    @each $global, $shades in $border-style {
+        @each $shade, $value in $shades {
+            --wnr-#{$global}-#{$shade}: #{$value};
+        }
+    }
+
+    /* position */
+    @each $global, $shades in $postion {
+        @each $shade, $value in $shades {
+            --wnr-#{$global}-#{$shade}: #{$value};
+        }
+    }
+
+    /* transitions */
+    @each $global, $shades in $transitions {
+        @each $shade, $value in $shades {
+            --wnr-#{$global}-#{$shade}: #{$value};
+        }
+    }
+
+    /* flex */
+    --flex: flex;
+    --flex-1: 1 1 0%;
+}
+
+:root[data-theme-mode="light"] {
+    @each $color, $shades in $light_mode_color {
+        @each $shade, $value in $shades {
+            color-scheme: light;
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+}
+
+:root[data-theme-mode="dark"] {
+    @each $color, $shades in $dark_mode_color {
+        @each $shade, $value in $shades {
+            color-scheme: dark;
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+}

@@ -1,0 +1,96 @@
+$border-radius: (
+    radius:("default": .375rem,
+        "extra-small": .25rem,
+        "small": .5rem,
+        "medium": .75rem,
+        "lg": 1rem,
+        "lg-end": 0 1rem 1rem 0,
+        "xl": 1.75rem,
+        "circle": 50%,
+        "full": 500px,
+    )
+);
+$container-width: (
+    container:("default": 1320px,
+        "small": 1000px,
+        "large": 1550px,
+    )
+);
+$shrink: (
+    shrink:("0": 0,
+        "1": 1,
+        "2": 2,
+    )
+);
+$opacity: (
+    opacity:("bg": 1,
+        "txt": 1,
+        "border": 1,
+        "shadow": 1,
+        "0": 0,
+        "01": 0.1,
+        "10": .1,
+        "015": 0.15,
+        "15": .15,
+        "02": 0.2,
+        "20": .2,
+        "025": 0.25,
+        "25": .25,
+        "03": 0.3,
+        "30": .3,
+        "035": 0.35,
+        "35": .35,
+        "04": 0.4,
+        "40": .4,
+        "045": 0.45,
+        "45": .45,
+        "05": 0.5,
+        "50": .5,
+        "055": 0.55,
+        "55": .55,
+        "06": 0.6,
+        "60": .6,
+        "065": 0.65,
+        "65": .65,
+        "07": 0.7,
+        "70": .7,
+        "075": 0.75,
+        "75": .75,
+        "08": 0.8,
+        "80": .8,
+        "085": 0.85,
+        "85": .85,
+        "09": 0.9,
+        "90": .9,
+        "095": 0.95,
+        "95": .95,
+        "100": 1,
+    )
+);
+$overflow: (
+    overflow:("fix": hidden,
+        "visible": visible,
+        "auto": auto,
+    )
+);
+$border-style: (
+    border:("width-1": 1px,
+        "solid": solid,
+        "transparent": transparent,
+        "right-0": 0,
+        "left-0": 0,
+        "bottom-0": 0,
+        "top-0": 0,
+    )
+);
+$postion: (
+    pos:("relative": relative,
+        "absolute": absolute,
+        "fix": fixed,
+        "static": static,
+    )
+);
+$transitions: (
+    transition:("default": all .3s,
+    )
+);

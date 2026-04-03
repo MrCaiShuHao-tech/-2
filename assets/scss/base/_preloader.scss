@@ -1,0 +1,60 @@
+// @use '../abstracts/index' as *;
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  1.5 preloader
+---------------------------------*/
+#wnr-preloader {
+	@include pfix;
+	@include top(0);
+	@include left(0);
+	@include right(0);
+	@include bottom(0);
+	z-index: 9999999999;
+	@include bg-fill-canvas;
+	height: 100vh;
+	width: 100vw;
+
+	.loading-wrap {
+		@include prelative;
+		height: 100%;
+		width: 100%;
+		@include gridbox;
+		place-content: center;
+
+		.loading {
+			height: 90px;
+			width: 90px;
+			@include border-radius(50%);
+			@include transition(all 0.5s ease-in-out);
+			border: 1px solid transparent;
+			border-color: transparent rgba(var(--clr-theme-primary), var(--wnr-opacity-bg)) transparent rgba(var(--clr-theme-primary), var(--wnr-opacity-bg));
+			@include animation(spinLoaderCircle 1.5s linear 0s infinite normal);
+			transform-origin: 50% 50%;
+		}
+
+		.loading-logo {
+			@include pabsolute;
+			@include top(50%);
+			@include left(50%);
+			@include transform (translate(-50%, -50%));
+			width: 55px;
+		}
+
+		&:hover {
+			.loading {
+				@include transition(all 0.5s ease-in-out);
+			}
+		}
+	}
+}
+
+@keyframes spinLoaderCircle {
+	0% {
+		@include transform (rotate(0deg));
+	}
+
+	100% {
+		@include transform (rotate(360deg));
+	}
+}

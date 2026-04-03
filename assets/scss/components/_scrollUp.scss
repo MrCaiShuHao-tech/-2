@@ -1,0 +1,94 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  2.3 scroll Up
+---------------------------------*/
+
+// Scroll To Top /
+#percentage-scroll {
+	height: 60px;
+	width: 60px;
+	background-color: var(--clr-raw-white);
+	border-radius: 50%;
+	position: fixed;
+	bottom: 40px;
+	right: 50px;
+	transform: scale(0);
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	z-index: 100;
+
+	@include respond-below ($max-md) {
+		inset-inline-end: 30px;
+		inset-block-end: 20px;
+	}
+
+	@include respond-below ($max-sm) {
+		inset-inline-end: 20px;
+		inset-block-end: 20px;
+	}
+
+	&.active {
+		transform: scale(1);
+		opacity: 1;
+		visibility: visible;
+		@include animation(500ms ease-in-out 0s normal none 1 running scrollUp);
+		@include transition(0.3s);
+
+		@include respond-above ($lg) {
+			inset-block-end: 50px;
+		}
+		@include respond-below ($max-md) {
+			inset-block-end: 30px;
+		}
+
+		@include respond-below ($max-sm) {
+			inset-block-end: 20px;
+		}
+	}
+
+	#percentage-scroll-value {
+		height: calc(100% - 6px);
+		width: calc(100% - 6px);
+		background-color: rgba(var(--clr-theme-secondary), var(--wnr-opacity-bg));
+		@include color-theme-primary;
+		@include border-radius(50%);
+		@include gridbox;
+		place-items: center;
+		font-size: var(--wnr-fs-xs);
+		font-weight: var(--wnr-font-semi-bold);
+
+		i {
+			font-size: 1.25rem;
+		}
+	}
+}
+
+@-webkit-keyframes scrollUp {
+	0% {
+		@include transform(translate3d(0, 80%, 0));
+		visibility: visible;
+	}
+
+	to {
+		@include transform(translateZ(0));
+		transform: translateZ(0);
+	}
+}
+
+@keyframes scrollUp {
+	0% {
+		@include transform(translate3d(0, 80%, 0));
+		visibility: visible;
+	}
+
+	to {
+		@include transform(translateZ(0));
+		transform: translateZ(0);
+	}
+}

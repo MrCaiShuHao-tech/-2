@@ -1,0 +1,231 @@
+@use '../abstracts' as *;
+
+/*---------------------------------
+/*  2.5 bg animation
+---------------------------------*/
+// animation bg style 01
+.bg-animation-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-shape {
+    position: absolute;
+    opacity: 0.07;
+
+    &.circle {
+        border-radius: 50%;
+    }
+
+    &.triangle {
+        width: 0;
+        height: 0;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 173px solid var(--clr-bg-secondary);
+    }
+
+    &.square {
+        width: 100px;
+        height: 100px;
+        background: var(--clr-bg-primary);
+        transform: rotate(45deg);
+    }
+
+    &.wave {
+        width: 200px;
+        height: 100px;
+        border-radius: 100px 100px 0 0;
+        background: var(--clr-bg-optional);
+    }
+
+    &.hexagon {
+        width: 100px;
+        height: 57.7px;
+        background: var(--clr-bg-primary);
+        position: relative;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+        }
+
+        &::before {
+            bottom: 100%;
+            border-bottom: 28.9px solid var(--clr-bg-primary);
+        }
+
+        &::after {
+            top: 100%;
+            border-top: 28.9px solid var(--clr-bg-primary);
+        }
+    }
+}
+
+.shape-1 {
+    top: 10%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+    background: var(--clr-bg-secondary);
+    animation: floating 15s infinite;
+}
+
+.shape-2 {
+    top: 20%;
+    right: 10%;
+    animation: spin 30s linear infinite;
+}
+
+.shape-3 {
+    bottom: 15%;
+    left: 15%;
+    width: 120px;
+    height: 120px;
+    background: var(--clr-bg-optional);
+    animation: floating 18s infinite reverse;
+}
+
+.shape-4 {
+    bottom: 20%;
+    right: 15%;
+    animation: spin 25s linear infinite reverse;
+}
+
+.shape-5 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    background: var(--clr-bg-primary);
+    animation: pulse3 12s infinite;
+}
+
+.shape-6 {
+    top: 75%;
+    left: 30%;
+    animation: floating 20s infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(30px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse3 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.05;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.02;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.05;
+    }
+}
+
+// animation bg style 02
+.bg-animation-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(198, 217, 132, 0.07);
+    animation: floatBubble 15s infinite ease-in-out;
+    opacity: 0;
+
+    &:nth-child(even) {
+        background: rgba(0, 64, 52, 0.05);
+    }
+
+    &:nth-child(3n) {
+        background: rgba(242, 205, 92, 0.08);
+    }
+}
+
+@keyframes floatBubble {
+    0% {
+        opacity: 0;
+        transform: translateY(100%) translateX(0) rotate(0deg);
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-300%) translateX(var(--x-move)) rotate(var(--rotation));
+    }
+}

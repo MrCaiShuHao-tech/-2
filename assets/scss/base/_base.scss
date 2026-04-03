@@ -1,0 +1,451 @@
+@use '../abstracts' as *;
+
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Plumbur – Plumbing Services & Solutions HTML5 Template
+    Author: Webcodemania
+    Description: Plumbur – Plumbing Services & Solutions HTML5 Template.
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+	-----------------
+    01. THEME CSS
+	-----------------
+		1.1 @forward 'common';
+		1.2 @forward 'spacing';
+		1.3 @forward 'base.scss';
+		1.4 @forward 'light_dark-switcher';
+		1.5 @forward 'preloader';
+		1.6 @forward 'custom-container';
+		1 index
+
+	-----------------
+    02. COMPONENTS CSS
+	-----------------
+	2.1 @forward 'animation.scss';
+	2.2 @forward 'animation-short.scss';
+	2.3 @forward 'scrollUp.scss';
+	2.4 @forward 'breadcrumb.scss';
+	2.5 @forward 'bg_animation.scss';
+	2.6 @forward 'buttons.scss';
+	2.7 @forward 'pagination.scss';
+	2.8 @forward 'offcanvas.scss';
+	2.9 @forward 'section-title.scss';
+	2.10 @forward 'social-icons';
+	2.11 @forward 'search.scss';
+	2 index
+
+	-----------------
+    03. HEADER CSS
+	-----------------
+		3.1 @forward 'header';
+		3.4 @forward 'header-common';
+		3 index
+
+	---------------------------------
+	04. BLOG CSS
+	---------------------------------
+		4.1 @forward 'blog';
+		4.2 @forward 'sidebar';
+		4.3 @forward 'blog-details';
+		4 index
+
+	---------------------------------
+	05. FOOTER CSS
+	---------------------------------
+		5.1 @forward 'footer';
+		5.2 @forward 'footer-2';
+		5 index
+
+	---------------------------------
+	06. LIGHT/DARK MODE LAYOUT
+	---------------------------------
+		1.1 @forward 'light-dark-layout';
+		1 index
+
+	---------------------------------
+	07. Banner CSS
+	---------------------------------
+		7.1 @forward 'banner';
+		7.2 @forward 'slick';
+		7.3 @forward 'slider';
+		7 index
+
+	---------------------------------
+	08. PAGES CSS
+	---------------------------------
+
+		8.1 @forward './about-us.scss';
+		8.2 @forward './working-process.scss';
+		8.3 @forward './services.scss';
+		8.4 @forward './choose-list.scss';
+		8.5 @forward './funfact-counter.scss';
+		8.6 @forward './faq.scss';
+		8.7 @forward './our-team.scss';
+		8.8 @forward './testimonial.scss';
+		8.9 @forward './contact-us.scss';
+		8.10 @forward './service-details.scss';
+		8.11 @forward './pricing.scss';
+		8 index
+ */
+
+/*----------------------------------------*/
+/*  1.1 Theme Default
+/*----------------------------------------*/
+
+// Google Fonts
+
+@import url($font-url);
+
+* {
+	outline: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+	&::after,
+	&::before {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+}
+
+html {
+	text-size-adjust: 100%;
+	font-family: var(--wnr-ff-body);
+	font-size: var(--wnr-fs-body);
+	-webkit-tap-highlight-color: transparent;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+body {
+	font-family: var(--wnr-ff-body);
+	font-size: var(--wnr-fs-body);
+	line-height: var(--wnr-lh-body);
+	font-weight: var(--wnr-font-normal);
+	@include color-type-mid2;
+	@include bg-fill-canvas-body;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
+	// @include wnr-transition-default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: var(--wnr-ff-heading);
+	color: rgba(var(--clr-heading-default), var(--wnr-opacity-txt));
+	margin-block: 0;
+	font-weight: var(--wnr-font-semi-bold);
+}
+
+h1,
+.h1 {
+	font-size: var(--wnr-fs-h1);
+	line-height: 1.3;
+
+	@include respond-below ($max-sm) {
+		font-size: 2.25rem;
+	}
+}
+
+h2,
+.h2 {
+	font-size: var(--wnr-fs-h2);
+	line-height: 1.3;
+
+	@include respond-below ($max-sm) {
+		font-size: 1.875rem;
+	}
+}
+
+h3,
+.h3 {
+	font-size: var(--wnr-fs-h3);
+	line-height: 1.3;
+
+	@include respond-below ($max-md) {
+		font-size: 1.625rem;
+	}
+
+	@include respond-below ($max-sm) {
+		font-size: 1.375rem;
+	}
+}
+
+h4,
+.h4 {
+	font-size: var(--wnr-fs-h4);
+	line-height: 1.2;
+
+	@include respond-below ($max-md) {
+		font-size: 1.375rem;
+	}
+
+	@include respond-below ($xs) {
+		font-size: 1.25rem;
+	}
+
+}
+
+h5,
+.h5 {
+	font-size: var(--wnr-fs-h5);
+	line-height: 1.2;
+}
+
+h6,
+.h6 {
+	font-size: var(--wnr-fs-h6);
+	line-height: 1.2;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: rgba(var(--clr-heading-default), var(--wnr-opacity-txt));
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	font-size: var(--wnr-fs-base);
+	font-weight: var(--wnr-font-normal);
+	@include color-type-mid2;
+	line-height: var(--wnr-lh-p);
+	margin-block-end: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+// a,
+// .btn,
+// button,
+// span,
+// sub,
+// sup,
+// p,
+// input,
+// select,
+// textarea,
+// li,
+// img,
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// i {
+// 	@include transition(all 0.4s ease-out 0s);
+// }
+
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+	text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+img:not([draggable]),
+embed,
+object,
+video {
+	max-width: 100%;
+	height: auto
+}
+
+img,
+picture {
+	border: none;
+	max-width: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+:is(ul, ol)[class] {
+	list-style: "";
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+	color: rgba(var(--clr-theme-primary), var(--wnr-opacity-txt));
+	@include transition(all 0.3s ease);
+
+	&:hover,
+	&:focus,
+	&.active {
+		text-decoration: none;
+		outline: none;
+		color: rgba(var(--clr-theme-primary-hover), var(--wnr-opacity-txt));
+	}
+}
+
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:focus {
+	outline: 0;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+hr:not([size]) {
+	margin: 0;
+	border-color: var(--wnr-border-primary);
+	opacity: 1;
+	border-width: 1px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+textarea {
+	outline: none;
+	width: 100%;
+	height: 60px;
+	@include border-radius(0);
+	@include bg-ui-fill-default;
+	@include color-type-mid2;
+	font-family: var(--wnr-ff-roboto);
+	font-size: var(--wnr-fs-base);
+	font-style: var(--wnr-font-style-normal);
+	font-weight: var(--wnr-font-regular);
+	border: 0;
+	@include transition(all 0.4s ease-out 0s);
+
+	@include wnr-placeholder {
+		font-size: var(--wnr-fs-base);
+		@include color-type-mid2;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+input[type="date" i]::-webkit-calendar-picker-indicator {
+	filter: brightness(0) invert(1);
+	opacity: .8;
+}
+
+*::-moz-selection {
+	@include bg-theme-primary;
+	@include color-raw-white;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	@include bg-theme-primary;
+	@include color-raw-white;
+	text-shadow: none;
+}
+
+::selection {
+	@include bg-theme-primary;
+	@include color-raw-white;
+	text-shadow: none;
+}
+
+*::-moz-placeholder {
+	opacity: 1;
+	font-size: 15px;
+
+	@include wnr-placeholder {
+		@include color-type-mid2;
+	}
+}
+
+*::placeholder {
+	opacity: 1;
+	font-size: 15px;
+
+	@include wnr-placeholder {
+		@include color-type-mid2;
+	}
+}
+
+a {
+	&:hover {
+		color: rgba(var(--clr-theme-primary), var(--wnr-opacity-txt));
+	}
+}

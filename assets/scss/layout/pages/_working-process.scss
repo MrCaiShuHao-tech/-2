@@ -1,0 +1,189 @@
+@use '../../abstracts' as *;
+
+/*---------------------------------
+/*  8.2 working process
+---------------------------------*/
+.working-process {
+    counter-reset: workNumber;
+    @include prelative;
+
+    .container {
+        @include prelative;
+    }
+
+    .process-step {
+        @include prelative;
+        z-index: 2;
+        text-align: center;
+        @include transition(all .4s ease);
+
+        @include respond-below($max-lg) {
+            margin-block-end: 1.875rem;
+        }
+
+        @include respond-below($max-sm) {
+            margin-block-end: 1.25rem;
+        }
+
+        .step-number {
+            @include prelative;
+            @include center;
+            @include widthHeight(50px, 50px);
+            background: linear-gradient(135deg, var(--clr-bg-secondary), var(--clr-bg-optional));
+            @include border-radius(var(--wnr-radius-circle));
+            font-size: var(--wnr-fs-3xl);
+            font-weight: var(--wnr-font-semi-bold);
+            color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+            margin: 0 auto 1.25rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 5px solid rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+            @include transition(all .4s ease);
+        }
+
+        .step-icon-wrap {
+            @include prelative;
+            @include center;
+            @include widthHeight(120px, 120px);
+            background-color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+            @include border-radius(1.25rem);
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            @include transition(all .4s ease);
+            overflow: hidden;
+            z-index: 3;
+
+            &::before {
+                @include pabsolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, var(--clr-bg-secondary), var(--clr-bg-optional));
+                top: 0;
+                left: 0;
+                opacity: 0;
+                @include transition(all .4s ease);
+                z-index: -1;
+            }
+
+            .step-icon {
+                font-size: var(--wnr-fs-5xl);
+                color: rgba(var(--clr-theme-primary), var(--wnr-opacity-txt));
+                @include transition(all .4s ease);
+            }
+
+            @include respond-below($max-sm) {
+                @include widthHeight(100px, 100px);
+
+                .step-icon {
+                    font-size: var(--wnr-fs-text-40);
+                }
+            }
+        }
+
+        .step-content {
+            .step-title {
+                font-size: var(--wnr-fs-xl);
+                color: rgba(var(--clr-type-default), var(--wnr-opacity-txt));
+                margin-block-end: 0.9375rem;
+                font-weight: var(--wnr-font-semi-bold);
+                @include transition(all .3s ease);
+            }
+
+            .step-desc {
+                font-size: var(--wnr-fs-text-sm);
+                color: rgba(var(--clr-type-mid2), var(--wnr-opacity-txt));
+                line-height: 1.7;
+            }
+        }
+
+        &:hover {
+            .step-number {
+                transform: scale(1.15);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            }
+
+            .step-icon-wrap {
+                transform: translateY(-15px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+                &::before {
+                    opacity: 1;
+                }
+
+                .step-icon {
+                    color: rgba(var(--clr-raw-white), var(--wnr-opacity-txt));
+                    transform: scale(1.1);
+                }
+            }
+
+            .step-content {
+                .step-title {
+                    color: rgba(var(--clr-theme-primary), var(--wnr-opacity-txt));
+                }
+            }
+        }
+    }
+
+    @include respond-above($lg) {
+        .process-steps {
+            // background-image: url(../images/working-process/working-process.png);
+            // background-repeat: no-repeat;
+            // background-position: center 10%;
+
+            [class*=col-]:nth-child(2) {
+                .process-step {
+                    margin-block-start: 6.25rem;
+
+                    @include respond-below($max-lg) {
+                        margin-block-start: 0;
+                    }
+                }
+            }
+
+            [class*=col-]:nth-child(3) {
+                .process-step {
+                    margin-block-start: 3.125rem;
+
+                    @include respond-below($max-lg) {
+                        margin-block-start: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Animations */
+#delay-0-5s {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+#delay-1-0s {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+#delay-1-5s {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes iconfloat {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: iconfloat 3s ease-in-out infinite;
+}
